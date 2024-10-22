@@ -7,7 +7,7 @@
     android:padding="16dp"
     android:background="@color/material_dynamic_primary90">
 
-
+    <!-- Brief Architecture Name -->
     <TextView
         android:id="@+id/tv_ArchitectureName"
         android:layout_width="wrap_content"
@@ -17,13 +17,7 @@
         android:textColor="#303F9F"
         android:text="Architecture Name" />
 
-    <TextView
-        android:id="@+id/tv_ArchitectureArchitect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Architect"
-        android:paddingTop="4dp" />
-
+    <!-- Brief Architecture Location -->
     <TextView
         android:id="@+id/tv_ArchitectureLocation"
         android:layout_width="wrap_content"
@@ -31,6 +25,7 @@
         android:text="Location"
         android:paddingTop="4dp" />
 
+    <!-- Brief Architecture Year Completed -->
     <TextView
         android:id="@+id/tv_ArchitectureYearCompleted"
         android:layout_width="wrap_content"
@@ -38,32 +33,18 @@
         android:text="Year Completed"
         android:paddingTop="4dp" />
 
+    <!-- See Detail Button -->
     <TextView
-        android:id="@+id/tv_ArchitectureStyle"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Style"
-        android:paddingTop="4dp" />
-
-    <TextView
-        android:id="@+id/tv_ArchitectureHeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Height"
-        android:paddingTop="4dp" />
-
-    <TextView
-        android:id="@+id/tv_ArchitectureDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Description"
-        android:paddingTop="4dp" />
+        android:text="      " />
 
     <Button
         android:id="@+id/btnSeeDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
-
         android:text="See Detail" />
+
 </LinearLayout>

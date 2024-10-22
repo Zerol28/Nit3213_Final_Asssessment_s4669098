@@ -7,6 +7,7 @@ import android.widget.TextView
 
 class ArchitectureDetailActivity : AppCompatActivity() {
 
+    // Declare TextViews for displaying architecture details
     private lateinit var ArchitectureName: TextView
     private lateinit var ArchitectureArchitect: TextView
     private lateinit var ArchitectureLocation: TextView
@@ -15,12 +16,14 @@ class ArchitectureDetailActivity : AppCompatActivity() {
     private lateinit var ArchitectureHeight: TextView
     private lateinit var ArchitectureDescription: TextView
 
-
+    // onCreate is called when the activity is first created
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Set the content view to the layout activity_architecture_detail.xml
         setContentView(R.layout.activity_architecture_detail)
 
-        // Initialize views
+        // Initialize the TextViews by finding them from the layout
         ArchitectureName = findViewById(R.id.tv_ArchitectureName)
         ArchitectureArchitect = findViewById(R.id.tv_ArchitectureArchitect)
         ArchitectureLocation = findViewById(R.id.tv_ArchitectureLocation)
@@ -29,28 +32,27 @@ class ArchitectureDetailActivity : AppCompatActivity() {
         ArchitectureHeight = findViewById(R.id.tv_ArchitectureHeight)
         ArchitectureDescription = findViewById(R.id.tv_ArchitectureDescription)
 
+        // Retrieve data passed through the intent and set default values if null
+        val IV_ArchitectureName = intent.getStringExtra("name") ?: "Architecture" // Default to "Architecture" if no data
+        val IV_ArchitectureArchitect = intent.getStringExtra("architect") ?: "Unknown" // Default to "Unknown" if no data
+        val IV_ArchitectureLocation = intent.getStringExtra("location") ?: "Unknown" // Default to "Unknown" if no data
+        val IV_ArchitectureYearCompleted = intent.getIntExtra("year completed", 0) // Default to 0 if no data
+        val IV_ArchitectureStyle = intent.getStringExtra("style") ?: "Unknown" // Default to "Unknown" if no data
+        val IV_ArchitectureHeight = intent.getIntExtra("height", 0) // Default to 0 if no data
+        val IV_ArchitectureDescription = intent.getStringExtra("description") ?: "No description available" // Default description if no data
 
-        // Retrieve the data from the intent
-        val IV_ArchitectureName = intent.getStringExtra("name") ?: "Architecture"
-        val IV_ArchitectureArchitect = intent.getStringExtra("architect") ?: "Unknown"
-        val IV_ArchitectureLocation = intent.getStringExtra("location") ?: "Unknown"
-        val IV_ArchitectureYearCompleted = intent.getIntExtra("year completed", 0)
-        val IV_ArchitectureStyle = intent.getStringExtra("style") ?: "Unknown"
-        val IV_ArchitectureHeight = intent.getIntExtra("height", 0)
-        val IV_ArchitectureDescription = intent.getStringExtra("description") ?: "No description available"
-
-        // Set the data to the TextViews
+        // Set the retrieved data to the corresponding TextViews for display
         ArchitectureName.text = "$IV_ArchitectureName"
         ArchitectureArchitect.text = "Architect: $IV_ArchitectureArchitect"
         ArchitectureLocation.text = "Location: $IV_ArchitectureLocation"
         ArchitectureYearCompleted.text = "Year Completed: $IV_ArchitectureYearCompleted"
-        ArchitectureStyle.text = "Stlye: $IV_ArchitectureStyle"
+        ArchitectureStyle.text = "Style: $IV_ArchitectureStyle"
         ArchitectureHeight.text = "Height: $IV_ArchitectureHeight"
         ArchitectureDescription.text = "Description: $IV_ArchitectureDescription"
-
     }
 
+    // Function to return to the previous activity (dashboard) when a button is clicked
     fun goBackToDashboard(view: View) {
-        finish()
+        finish() // Close the current activity and return to the previous one
     }
 }
