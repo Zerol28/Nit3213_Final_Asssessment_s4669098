@@ -1,6 +1,5 @@
 package com.example.nit3213_final_asssessment_liam.network
 
-import com.example.finalassigment.network.ArchitectureApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

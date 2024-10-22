@@ -24,9 +24,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        etUsername = findViewById(R.id.etUsername)
-        etPassword = findViewById(R.id.etPassword)
-        btnLogin = findViewById(R.id.btnLogin)
+        etUsername = findViewById(R.id.LI_Username)
+        etPassword = findViewById(R.id.LI_Password)
+        btnLogin = findViewById(R.id.btn_Login)
 
         btnLogin.setOnClickListener {
             val username = etUsername.text.toString()

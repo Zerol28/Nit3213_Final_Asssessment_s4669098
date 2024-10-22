@@ -7,7 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.finalassigment.network.ArchitectureApi
+import com.example.nit3213_final_asssessment_liam.network.ArchitectureApi
 import com.example.nit3213_final_asssessment_liam.data.ArchitectureResponse
 import com.example.nit3213_final_asssessment_liam.network.RetrofitInstance
 import retrofit2.Call

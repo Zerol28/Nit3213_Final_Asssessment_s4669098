@@ -5,9 +5,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
 import com.example.nit3213_final_asssessment_liam.R
-import com.example.nit3213_final_asssessment_liam.R.id.tv_ArchitectureArchitect
 
-class ArchitectureDetailsActivity : AppCompatActivity() {
+class ArchitectureDetailActivity : AppCompatActivity() {
 
     private lateinit var ArchitectureName: TextView
     private lateinit var ArchitectureArchitect: TextView
@@ -24,7 +23,7 @@ class ArchitectureDetailsActivity : AppCompatActivity() {
 
         // Initialize views
         ArchitectureName = findViewById(R.id.tv_ArchitectureName)
-        ArchitectureArchitect = findViewById(tv_ArchitectureArchitect)
+        ArchitectureArchitect = findViewById(R.id.tv_ArchitectureArchitect)
         ArchitectureLocation = findViewById(R.id.tv_ArchitectureLocation)
         ArchitectureYearCompleted = findViewById(R.id.tv_ArchitectureYearCompleted)
         ArchitectureStyle = findViewById(R.id.tv_ArchitectureStyle)
@@ -42,13 +41,13 @@ class ArchitectureDetailsActivity : AppCompatActivity() {
         val IV_ArchitectureDescription = intent.getStringExtra("ArchitectureDescription") ?: "No description available"
 
         // Set the data to the TextViews
-        ArchitectureName.text = "Architecture Name: $IV_ArchitectureName"
+        ArchitectureName.text = "$IV_ArchitectureName"
         ArchitectureArchitect.text = "Architect: $IV_ArchitectureArchitect"
-        ArchitectureLocation.text = "Architecture Location: $IV_ArchitectureLocation"
+        ArchitectureLocation.text = "Location: $IV_ArchitectureLocation"
         ArchitectureYearCompleted.text = "Year Completed: $IV_ArchitectureYearCompleted"
-        ArchitectureStyle.text = "Architecture Stlye: $IV_ArchitectureStyle"
-        ArchitectureHeight.text = "Architecture Height: $IV_ArchitectureHeight"
-        ArchitectureDescription.text = "Architecture Description: $IV_ArchitectureDescription"
+        ArchitectureStyle.text = "Stlye: $IV_ArchitectureStyle"
+        ArchitectureHeight.text = "Height: $IV_ArchitectureHeight"
+        ArchitectureDescription.text = "Description: $IV_ArchitectureDescription"
 
 
     }
