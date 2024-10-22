@@ -13,7 +13,7 @@ class ArchitectureAdapter(private val architectureList: List<Architecture>) : Re
 
     class ArchitectureViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvArchitectureName: TextView = itemView.findViewById(R.id.tv_ArchitectureName)
-        val tvAtrchitectureArchitect: TextView = itemView.findViewById(R.id.tv_ArchitectureArchitect)
+        val tvArchitectureArchitect: TextView = itemView.findViewById(R.id.tv_ArchitectureArchitect)
         val tvArchitectureLocation: TextView = itemView.findViewById(R.id.tv_ArchitectureLocation)
         val tvArchitectureYearCompleted: TextView = itemView.findViewById(R.id.tv_ArchitectureYearCompleted)
         val tvArchitectureStyle: TextView = itemView.findViewById(R.id.tv_ArchitectureStyle)
@@ -22,37 +22,33 @@ class ArchitectureAdapter(private val architectureList: List<Architecture>) : Re
         val btnSeeDetail: Button = itemView.findViewById(R.id.btnSeeDetail)
     }
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArchitectureViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_architecture, parent, false)
         return ArchitectureViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ArchitectureViewHolder, position: Int) {
-        val Architecture = architectureList[position]
-        holder.tvArchitectureName.text = "Architecture Name: ${Architecture.tv_ArchitectureName}"
-                //  Architecture.tv_ArchitectureName
-        holder.tvAtrchitectureArchitect.text = "Architect: ${Architecture.tv_ArchitectureArchitect}"
-                //  Architecture.tv_ArchitectureArchitect
-        holder.tvArchitectureLocation.text = "Location: ${Architecture.tv_ArchitectureLocation}"
-                //  Architecture.tv_ArchitectureLocation
-        holder.tvArchitectureYearCompleted.text = "Year Completed: ${Architecture.tv_ArchitectureYearCompleted}"
-        holder.tvArchitectureStyle.text = "Style: ${Architecture.tv_ArchitectureStyle}"
-                //  Architecture.tv_ArchitectureStyle
-        holder.tvArchitectureHeight.text = "Height: ${Architecture.tv_ArchitectureHeight}"
-        holder.tvArchitectureDescription.text = "Description: ${Architecture.tv_ArchitectureDescription}"
-                //  Architecture.tv_ArchitectureDescription
+        val architecture = architectureList[position]
+        holder.tvArchitectureName.text = architecture.name
+        "architect: ${architecture.architect}".also { holder.tvArchitectureArchitect.text = it }
+        "location: ${architecture.location}".also { holder.tvArchitectureLocation.text = it }
+        "Year Completed: ${architecture.yearCompleted}".also { holder.tvArchitectureYearCompleted.text = it }
+        "style: ${architecture.style}".also { holder.tvArchitectureStyle.text = it }
+        "height: ${architecture.height}".also { holder.tvArchitectureHeight.text = it }
+        "description: ${architecture.description}".also { holder.tvArchitectureDescription.text = it }
 
 
         holder.btnSeeDetail.setOnClickListener {
             val context = holder.itemView.context
             val intent = Intent(context, ArchitectureDetailActivity::class.java).apply {
-                putExtra("architectureName",Architecture.tv_ArchitectureName)
-                putExtra("playerCount", Architecture.tv_ArchitectureArchitect)
-                putExtra("fieldType",Architecture.tv_ArchitectureLocation)
-                putExtra("olympicSport",Architecture.tv_ArchitectureYearCompleted)
-                putExtra("olympicSport",Architecture.tv_ArchitectureStyle)
-                putExtra("olympicSport",Architecture.tv_ArchitectureHeight)
-                putExtra("ARCHITECTURE_DESCRIPTION", Architecture.tv_ArchitectureDescription)
+                putExtra("name", architecture.name)
+                putExtra("architect", architecture.architect)
+                putExtra("location",architecture.location)
+                putExtra("year completed",architecture.yearCompleted)
+                putExtra("style",architecture.style)
+                putExtra("height",architecture.height)
+                putExtra("description", architecture.description)
             }
             context.startActivity(intent)
         }

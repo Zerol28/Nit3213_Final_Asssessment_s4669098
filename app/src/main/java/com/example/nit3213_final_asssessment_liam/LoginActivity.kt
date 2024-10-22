@@ -14,8 +14,8 @@ import java.io.IOException
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var etUsername: EditText
-    private lateinit var etPassword: EditText
+    private lateinit var liUsername: EditText
+    private lateinit var liPassword: EditText
     private lateinit var btnLogin: Button
 
     private val client = OkHttpClient()
@@ -24,13 +24,13 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        etUsername = findViewById(R.id.LI_Username)
-        etPassword = findViewById(R.id.LI_Password)
+        liUsername = findViewById(R.id.LI_Username)
+        liPassword = findViewById(R.id.LI_Password)
         btnLogin = findViewById(R.id.btn_Login)
 
         btnLogin.setOnClickListener {
-            val username = etUsername.text.toString()
-            val password = etPassword.text.toString()
+            val username = liUsername.text.toString()
+            val password = liPassword.text.toString()
             if (username.isNotEmpty() && password.isNotEmpty()) {
                 login(username, password)
             } else {

@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
-import com.example.nit3213_final_asssessment_liam.R
 
 class ArchitectureDetailActivity : AppCompatActivity() {
 
@@ -32,13 +31,13 @@ class ArchitectureDetailActivity : AppCompatActivity() {
 
 
         // Retrieve the data from the intent
-        val IV_ArchitectureName = intent.getStringExtra("ArchitectureName") ?: "Architecture"
-        val IV_ArchitectureArchitect = intent.getStringExtra("ArchitectureArchitect") ?: "Unknown"
-        val IV_ArchitectureLocation = intent.getStringExtra("ArchitectureLocation") ?: "Unknown"
-        val IV_ArchitectureYearCompleted = intent.getIntExtra("ArchitectureYearCompleted", 0)
-        val IV_ArchitectureStyle = intent.getStringExtra("ArchitectureStyle") ?: "Unknown"
-        val IV_ArchitectureHeight = intent.getIntExtra("ArchitectureHeight", 0)
-        val IV_ArchitectureDescription = intent.getStringExtra("ArchitectureDescription") ?: "No description available"
+        val IV_ArchitectureName = intent.getStringExtra("name") ?: "Architecture"
+        val IV_ArchitectureArchitect = intent.getStringExtra("architect") ?: "Unknown"
+        val IV_ArchitectureLocation = intent.getStringExtra("location") ?: "Unknown"
+        val IV_ArchitectureYearCompleted = intent.getIntExtra("year completed", 0)
+        val IV_ArchitectureStyle = intent.getStringExtra("style") ?: "Unknown"
+        val IV_ArchitectureHeight = intent.getIntExtra("height", 0)
+        val IV_ArchitectureDescription = intent.getStringExtra("description") ?: "No description available"
 
         // Set the data to the TextViews
         ArchitectureName.text = "$IV_ArchitectureName"

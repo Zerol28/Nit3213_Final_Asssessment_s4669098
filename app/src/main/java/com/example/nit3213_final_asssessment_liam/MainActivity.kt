@@ -1,13 +1,9 @@
 package com.example.nit3213_final_asssessment_liam
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.nit3213_final_asssessment_liam.network.ArchitectureApi
 import com.example.nit3213_final_asssessment_liam.data.ArchitectureResponse
 import com.example.nit3213_final_asssessment_liam.network.RetrofitInstance
 import retrofit2.Call
@@ -35,8 +31,8 @@ class MainActivity : AppCompatActivity() {
         RetrofitInstance.api.getArchitecture().enqueue(object : Callback<ArchitectureResponse> {
             override fun onResponse(call: Call<ArchitectureResponse>, response: Response<ArchitectureResponse>) {
                 if (response.isSuccessful) {
-                    val sportsList = response.body()?.entities
-                    sportsList?.let {
+                    val architectureList = response.body()?.entities
+                    architectureList?.let {
                         // Set up the adapter with the retrieved data
                         architectureAdapter = ArchitectureAdapter(it)
                         recyclerView.adapter = architectureAdapter
