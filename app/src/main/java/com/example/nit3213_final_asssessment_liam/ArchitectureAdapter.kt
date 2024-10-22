@@ -29,13 +29,18 @@ class ArchitectureAdapter(private val architectureList: List<Architecture>) : Re
 
     override fun onBindViewHolder(holder: ArchitectureViewHolder, position: Int) {
         val Architecture = architectureList[position]
-        holder.tvArchitectureName.text = Architecture.tv_ArchitectureName
-        holder.tvAtrchitectureArchitect.text = Architecture.tv_ArchitectureArchitect
-        holder.tvArchitectureLocation.text = Architecture.tv_ArchitectureLocation
+        holder.tvArchitectureName.text = "Architecture Name: ${Architecture.tv_ArchitectureName}"
+                //  Architecture.tv_ArchitectureName
+        holder.tvAtrchitectureArchitect.text = "Architect: ${Architecture.tv_ArchitectureArchitect}"
+                //  Architecture.tv_ArchitectureArchitect
+        holder.tvArchitectureLocation.text = "Location: ${Architecture.tv_ArchitectureLocation}"
+                //  Architecture.tv_ArchitectureLocation
         holder.tvArchitectureYearCompleted.text = "Year Completed: ${Architecture.tv_ArchitectureYearCompleted}"
-        holder.tvArchitectureStyle.text = Architecture.tv_ArchitectureStyle
-        holder.tvArchitectureHeight.text = "Architecture Height: ${Architecture.tv_ArchitectureHeight}"
-        holder.tvArchitectureDescription.text = Architecture.tv_ArchitectureDescription
+        holder.tvArchitectureStyle.text = "Style: ${Architecture.tv_ArchitectureStyle}"
+                //  Architecture.tv_ArchitectureStyle
+        holder.tvArchitectureHeight.text = "Height: ${Architecture.tv_ArchitectureHeight}"
+        holder.tvArchitectureDescription.text = "Description: ${Architecture.tv_ArchitectureDescription}"
+                //  Architecture.tv_ArchitectureDescription
 
 
         holder.btnSeeDetail.setOnClickListener {

@@ -49,10 +49,7 @@ class ArchitectureDetailActivity : AppCompatActivity() {
         ArchitectureHeight.text = "Height: $IV_ArchitectureHeight"
         ArchitectureDescription.text = "Description: $IV_ArchitectureDescription"
 
-
     }
-
-
 
     fun goBackToDashboard(view: View) {
         finish()

@@ -17,7 +17,7 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var sportsAdapter: ArchitectureAdapter
+    private lateinit var architectureAdapter: ArchitectureAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,18 +28,18 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         // Fetch data from API
-        fetchSportsData()
+        fetchArchitectureData()
     }
 
-    private fun fetchSportsData() {
+    private fun fetchArchitectureData() {
         RetrofitInstance.api.getArchitecture().enqueue(object : Callback<ArchitectureResponse> {
             override fun onResponse(call: Call<ArchitectureResponse>, response: Response<ArchitectureResponse>) {
                 if (response.isSuccessful) {
                     val sportsList = response.body()?.entities
                     sportsList?.let {
                         // Set up the adapter with the retrieved data
-                        sportsAdapter = ArchitectureAdapter(it)
-                        recyclerView.adapter = sportsAdapter
+                        architectureAdapter = ArchitectureAdapter(it)
+                        recyclerView.adapter = architectureAdapter
                     }
                 }
             }
